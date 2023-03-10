@@ -1,9 +1,13 @@
 baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+languageCode = 'ja-JP'
+title = 'nemu626'
 theme = 'm10c'
-author = 'nemu626'
-description = 'Software Engineer @Tokyo, Japan.'
+
+[[params]]
+	author =  'nemu626'
+	description = 'Software Engineer @Tokyo, Japan.'
+	avatar = 'https://pbs.twimg.com/profile_images/2978662646/83cef7905f6a182dc40589b394372ad9_400x400.png'
+	
 
 [[params.social]]
 	icon='github'
