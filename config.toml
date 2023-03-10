@@ -1,0 +1,16 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'm10c'
+author = 'nemu626'
+description = 'Software Engineer @Tokyo, Japan.'
+
+[[params.social]]
+	icon='github'
+	name = 'My Github'
+	url = 'https://github.com/nemu626'
+
+[[params.social]]
+	icon='twitter'
+	name='My Twitter'
+	url = 'https://twitter.com/NarugaL_ove'
