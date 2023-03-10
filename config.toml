@@ -3,11 +3,11 @@ languageCode = 'ja-JP'
 title = 'nemu626'
 theme = 'm10c'
 
-[[params]]
+[params]
 	author =  'nemu626'
-	description = 'Software Engineer @Tokyo, Japan.'
+	description = '東京都でよわよわフロントエンドエンジニアしてる。Software Engineer @Tokyo, Japan.'
 	avatar = 'https://pbs.twimg.com/profile_images/2978662646/83cef7905f6a182dc40589b394372ad9_400x400.png'
-	
+
 
 [[params.social]]
 	icon='github'
