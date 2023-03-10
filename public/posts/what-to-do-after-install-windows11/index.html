@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>What to Do After Install Windows11 // My New Hugo Site</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.3c3c186cd62e563ad6e2f00a89dbee656ab912d1d46f856b5605dd0232521e2a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="What to Do After Install Windows11"/>
+<meta name="twitter:description" content="Windows11ノートPCにWeb開発環境をセットアップした記録 この度、Windows11のノートPCを購入したので、開発環境をセットアップしました。ここ数年はLinux、Macを開発用に使っていたので、Windowsで快適な環境構築ができることに驚きつつ、記録を残しておきます。
+ざっと以下のような作業を行います。
+ Windows Terminalの設定 WSLの導入 VsCodeの導入 Ubuntuのセットアップ(In WSL)  Windows Terminalの設定 最新のWindows11には、コマンドベースのパッケージマネージャーであるwingetやモダンなターミナル環境windows terminalがデフォルトで入っており、CLI環境がかなり進化していてびっくりです。特にこだわらなくてもいい感じのCLI環境が手に入りますね。 Windows Terminalをより使いやすくするために設定していきます。
+nerd fontの設定 nerd font とは、各種アイコン類を内包した開発者向けのフォント群のことです。ターミナルをおしゃれにするには必須。英語のみのNerdFontは、上記リンクからダウンロードできます。日本語対応しているNerd Fontをいくつかリストアップしておきます。
+ GitHub - yuru7/HackGen: Hack と源柔ゴシックを合成したプログラミングフォント 白源 (はくげん／HackGen)   私はHackフォントに日本語mgen&#43;を合成したcicaを愛用しています。
+quake modeの設定 quake modeとは、ホットキー（通常はF12）を押すと、いつでも画面の上部にターミナルがニュッと現れてくるモードのことです。いつでもターミナルにアクセスできるのがかなり便利です。Windows terminal 1.9からquake modeに対応しているみたいです。デフォルトのホットキーはWin &#43; ~ になっていますが、お好きなキーに設定しましょう。私はLinuxやMacで使っていたのと同じくF12にしました。
+外観の設定 windows terminal
+WSLの導入 Windows上でLinuxを使えるようになるWindows Subsystem for Linuxはコマンド一行で導入できました。
+wsl --install wsl --list --onlineでInstallするディストロを確認することができます。Arch系があれば使いたかったのですが、Debian・Ubuntu系しかなかったので、おとなしくUbuntuにします。 インストール後再起動が必要なので再起動してください。
+vscodeの導入 みんな大好きVscodeもPowershellでWingetコマンドでインストールできるのが便利ですね。もちろん公式HPからインストーラをダウンロードしてインストーすることもできます。
+winget install vscode WSLのディレクトリをWindowsのVscodeで開くには、LinuxやMacと同じように、WSLのシェル上で以下のように開けばOKっぽいです。感動です。
+code . WSL上のUbuntuのセットアップ Windowsのセットアップとか書いておいて、実はこのターミナル環境の整備がメインタスクですね。
+install essential tools $ sudo apt update &amp;&amp; sudo apt upgrade -y sudo apt install build-essential install docker WSL2上から普通にインストールしても良いのですが、MS公式が勧めているのはDocker DesktopをWindowsにインストール後、BackendにWSL2をIntegrationして使えとのことです。"/>
+
+    <meta property="og:title" content="What to Do After Install Windows11" />
+<meta property="og:description" content="Windows11ノートPCにWeb開発環境をセットアップした記録 この度、Windows11のノートPCを購入したので、開発環境をセットアップしました。ここ数年はLinux、Macを開発用に使っていたので、Windowsで快適な環境構築ができることに驚きつつ、記録を残しておきます。
+ざっと以下のような作業を行います。
+ Windows Terminalの設定 WSLの導入 VsCodeの導入 Ubuntuのセットアップ(In WSL)  Windows Terminalの設定 最新のWindows11には、コマンドベースのパッケージマネージャーであるwingetやモダンなターミナル環境windows terminalがデフォルトで入っており、CLI環境がかなり進化していてびっくりです。特にこだわらなくてもいい感じのCLI環境が手に入りますね。 Windows Terminalをより使いやすくするために設定していきます。
+nerd fontの設定 nerd font とは、各種アイコン類を内包した開発者向けのフォント群のことです。ターミナルをおしゃれにするには必須。英語のみのNerdFontは、上記リンクからダウンロードできます。日本語対応しているNerd Fontをいくつかリストアップしておきます。
+ GitHub - yuru7/HackGen: Hack と源柔ゴシックを合成したプログラミングフォント 白源 (はくげん／HackGen)   私はHackフォントに日本語mgen&#43;を合成したcicaを愛用しています。
+quake modeの設定 quake modeとは、ホットキー（通常はF12）を押すと、いつでも画面の上部にターミナルがニュッと現れてくるモードのことです。いつでもターミナルにアクセスできるのがかなり便利です。Windows terminal 1.9からquake modeに対応しているみたいです。デフォルトのホットキーはWin &#43; ~ になっていますが、お好きなキーに設定しましょう。私はLinuxやMacで使っていたのと同じくF12にしました。
+外観の設定 windows terminal
+WSLの導入 Windows上でLinuxを使えるようになるWindows Subsystem for Linuxはコマンド一行で導入できました。
+wsl --install wsl --list --onlineでInstallするディストロを確認することができます。Arch系があれば使いたかったのですが、Debian・Ubuntu系しかなかったので、おとなしくUbuntuにします。 インストール後再起動が必要なので再起動してください。
+vscodeの導入 みんな大好きVscodeもPowershellでWingetコマンドでインストールできるのが便利ですね。もちろん公式HPからインストーラをダウンロードしてインストーすることもできます。
+winget install vscode WSLのディレクトリをWindowsのVscodeで開くには、LinuxやMacと同じように、WSLのシェル上で以下のように開けばOKっぽいです。感動です。
+code . WSL上のUbuntuのセットアップ Windowsのセットアップとか書いておいて、実はこのターミナル環境の整備がメインタスクですね。
+install essential tools $ sudo apt update &amp;&amp; sudo apt upgrade -y sudo apt install build-essential install docker WSL2上から普通にインストールしても良いのですが、MS公式が勧めているのはDocker DesktopをWindowsにインストール後、BackendにWSL2をIntegrationして使えとのことです。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/what-to-do-after-install-windows11/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-10T16:42:55+09:00" />
+<meta property="article:modified_time" content="2023-03-10T16:42:55+09:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="http://example.org/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <span class="app-header-title">My New Hugo Site</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/nemu626" target="_blank" rel="noreferrer noopener me">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>My Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="https://twitter.com/NarugaL_ove" target="_blank" rel="noreferrer noopener me">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>My Twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">What to Do After Install Windows11</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 10, 2023
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="windows11ノートpcにweb開発環境をセットアップした記録">Windows11ノートPCにWeb開発環境をセットアップした記録</h1>
+<p>この度、Windows11のノートPCを購入したので、開発環境をセットアップしました。ここ数年はLinux、Macを開発用に使っていたので、Windowsで快適な環境構築ができることに驚きつつ、記録を残しておきます。</p>
+<p>ざっと以下のような作業を行います。</p>
+<ol>
+<li>Windows Terminalの設定</li>
+<li>WSLの導入</li>
+<li>VsCodeの導入</li>
+<li>Ubuntuのセットアップ(In WSL)</li>
+</ol>
+<h2 id="windows-terminalの設定">Windows Terminalの設定</h2>
+<p>最新のWindows11には、コマンドベースのパッケージマネージャーである<code>winget</code>やモダンなターミナル環境<code>windows terminal</code>がデフォルトで入っており、CLI環境がかなり進化していてびっくりです。特にこだわらなくてもいい感じのCLI環境が手に入りますね。 Windows Terminalをより使いやすくするために設定していきます。</p>
+<h3 id="nerd-fontの設定">nerd fontの設定</h3>
+<p><a href="https://www.nerdfonts.com/#home"><code>nerd font</code></a> とは、各種アイコン類を内包した開発者向けのフォント群のことです。ターミナルをおしゃれにするには必須。英語のみのNerdFontは、上記リンクからダウンロードできます。日本語対応しているNerd Fontをいくつかリストアップしておきます。</p>
+<ul>
+<li><a href="https://github.com/yuru7/HackGen">GitHub - yuru7/HackGen: Hack と源柔ゴシックを合成したプログラミングフォント 白源 (はくげん／HackGen)</a></li>
+<li></li>
+</ul>
+<p>私は<code>Hack</code>フォントに日本語<code>mgen+</code>を合成した<a href="https://github.com/miiton/Cica">cica</a>を愛用しています。</p>
+<h3 id="quake-modeの設定">quake modeの設定</h3>
+<p><code>quake mode</code>とは、ホットキー（通常は<code>F12</code>）を押すと、いつでも画面の上部にターミナルがニュッと現れてくるモードのことです。いつでもターミナルにアクセスできるのがかなり便利です。<code>Windows terminal</code> 1.9からquake modeに対応しているみたいです。デフォルトのホットキーは<code>Win</code> + <code>~</code> になっていますが、お好きなキーに設定しましょう。私はLinuxやMacで使っていたのと同じく<code>F12</code>にしました。</p>
+<h3 id="外観の設定">外観の設定</h3>
+<p><code>windows terminal</code></p>
+<h2 id="wslの導入">WSLの導入</h2>
+<p>Windows上でLinuxを使えるようになる<code>Windows Subsystem for Linux</code>はコマンド一行で導入できました。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">wsl --install
+</code></pre></div><p><code>wsl --list --online</code>でInstallするディストロを確認することができます。Arch系があれば使いたかったのですが、Debian・Ubuntu系しかなかったので、おとなしくUbuntuにします。
+インストール後再起動が必要なので再起動してください。</p>
+<h2 id="vscodeの導入">vscodeの導入</h2>
+<p>みんな大好きVscodeもPowershellでWingetコマンドでインストールできるのが便利ですね。もちろん公式HPからインストーラをダウンロードしてインストーすることもできます。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">winget install vscode
+</code></pre></div><p>WSLのディレクトリをWindowsのVscodeで開くには、LinuxやMacと同じように、WSLのシェル上で以下のように開けばOKっぽいです。感動です。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">code .
+</code></pre></div><h2 id="wsl上のubuntuのセットアップ">WSL上のUbuntuのセットアップ</h2>
+<p>Windowsのセットアップとか書いておいて、実はこのターミナル環境の整備がメインタスクですね。</p>
+<h3 id="install-essential-tools">install essential tools</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt upgrade -y
+sudo apt install build-essential
+</code></pre></div><h3 id="install-docker">install docker</h3>
+<p>WSL2上から普通にインストールしても良いのですが、MS公式が勧めているのはDocker DesktopをWindowsにインストール後、BackendにWSL2をIntegrationして使えとのことです。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ 
+
+<span style="color:#75715e">### install zsh</span>
+
+UbuntuのデフォルトShellは<span style="color:#e6db74">`</span>Bash<span style="color:#e6db74">`</span>ですが、より高機能な<span style="color:#e6db74">`</span>zsh<span style="color:#e6db74">`</span>をインストールし、既定のShellにします。<span style="color:#e6db74">`</span>fish<span style="color:#e6db74">`</span>も使いやすいですが、POSIX互換を重視するならZshのほうが無難です。
+
+<span style="color:#e6db74">```</span>shell
+$ sudo apt install zsh
+$ chsh -s /bin/zsh
+</code></pre></div><p><code>zsh</code>の初回起動時に初期設定ウィザードが出てくるので、設定します。基本的にすべてデフォルトで良いと思います。</p>
+<h3 id="install-starship">install starship</h3>
+<p><a href="https://starship.rs/ja-jp/">starship</a>はどのシェルでもいい感じのPromptにしてくれるRust製cross-shell promptです。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -sS https://starship.rs/install.sh | sh
+
+echo <span style="color:#e6db74">&#39;eval &#34;$(starship init zsh)&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</code></pre></div><h3 id="install-rust-cli-applications">install rust CLI applications</h3>
+<p>既存のCLIコマンドを代替するRust製コマンドをインストールしておくとかなり便利なのでおすすめです。</p>
+<ul>
+<li><a href="https://github.com/TaKO8Ki/awesome-alternatives-in-rust">https://github.com/TaKO8Ki/awesome-alternatives-in-rust</a></li>
+</ul>
+<p>私の場合、以下のコマンド群をインストールしました。</p>
+<ul>
+<li><code>bat</code> : ページングやシンタクスハイライトなどがついている<code>cat</code>コマンド</li>
+<li><code>lsd</code> : カラフルな<code>ls</code>コマンド</li>
+<li><code>skim</code> : rust製<code>fzf</code>。あいまいな単語でファイルを検索してくれます。</li>
+<li><code>navi</code> : CLIコマンドの使い方をカタログのように表示してくれるチートシートです。困ったらこれ</li>
+<li><code>zoxide</code> : かなり便利な<code>cd</code>コマンドの代替</li>
+<li><code>delta</code> : 見やすいdiff tool</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># install rust</span>
+$ curl --proto <span style="color:#e6db74">&#39;=https&#39;</span> --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+$ cargo install bat lsd skim navi zoxide git-delta
+$ echo <span style="color:#e6db74">&#39;eval &#34;$(zoxide init zsh)&#34;
+</span><span style="color:#e6db74">alias ls=lsd
+</span><span style="color:#e6db74">alias ll=&#34;lsd -lah&#34;
+</span><span style="color:#e6db74">alias cat=&#34;bat&#34;
+</span><span style="color:#e6db74">alias fzf=&#34;sk&#34;&#39;</span> &gt;&gt; ~/.zshrc
+
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
