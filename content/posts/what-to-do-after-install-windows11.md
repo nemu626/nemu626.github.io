@@ -1,10 +1,8 @@
 ---
-title: "What to Do After Install Windows11"
+title: "Windows11にWSLベースの開発環境をセットアップした記録"
 date: 2023-03-10T16:42:55+09:00
 draft: false
 ---
-
-# Windows11ノートPCにWeb開発環境をセットアップした記録
 
 この度、Windows11のノートPCを購入したので、開発環境をセットアップしました。ここ数年はLinux、Macを開発用に使っていたので、Windowsで快適な環境構築ができることに驚きつつ、記録を残しておきます。
 
